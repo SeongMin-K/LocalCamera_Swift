@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import MetalKit
 import AVFoundation
 
 class ViewController: UIViewController {
-    @IBOutlet weak var preview: UIImageView!
+    @IBOutlet weak var preview: MTKView!
     @IBOutlet weak var cameraToggleBtn: UIButton!
+    
+    var device: MTLDevice!
+    var commandQueue: MTLCommandQueue!
     
     var captureSession: AVCaptureSession!
     var backCameraInput: AVCaptureDeviceInput!
@@ -20,6 +24,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        preview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        preview.contentMode = .scaleAspectFit
+        
+        device = MTLCreateSystemDefaultDevice()
+        preview.device = device
+        
+        commandQueue = preview.device?.makeCommandQueue()
         
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .photo
@@ -45,6 +57,18 @@ class ViewController: UIViewController {
         }
 
         startCaptureSession()
+    }
+    
+    private func render() {
+        guard let renderPassDescriptor = preview.currentRenderPassDescriptor else { return }
+        guard let commandBuffer = commandQueue.makeCommandBuffer() else { return }
+        guard let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else { return }
+        guard let currentDrawable = preview.currentDrawable else { return }
+        
+        commandEncoder.endEncoding()
+        
+        commandBuffer.present(currentDrawable)
+        commandBuffer.commit()
     }
     
     private func setupLivePreview() {
@@ -76,5 +100,15 @@ class ViewController: UIViewController {
         }
         
         captureSession.commitConfiguration()
+    }
+}
+
+extension ViewController: MTKViewDelegate {
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        
+    }
+    
+    func draw(in view: MTKView) {
+        render()
     }
 }

@@ -11,7 +11,6 @@
 		3E476AFB281C2FFB00739CCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E476AFA281C2FFB00739CCB /* SceneDelegate.swift */; };
 		3E476AFD281C2FFB00739CCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E476AFC281C2FFB00739CCB /* ViewController.swift */; };
 		3E476B00281C2FFB00739CCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E476AFE281C2FFB00739CCB /* Main.storyboard */; };
-		3E476B03281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E476B01281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodeld */; };
 		3E476B05281C2FFD00739CCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E476B04281C2FFD00739CCB /* Assets.xcassets */; };
 		3E476B08281C2FFD00739CCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E476B06281C2FFD00739CCB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -22,7 +21,6 @@
 		3E476AFA281C2FFB00739CCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3E476AFC281C2FFB00739CCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E476AFF281C2FFB00739CCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3E476B02281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalCameraMetal_Swift.xcdatamodel; sourceTree = "<group>"; };
 		3E476B04281C2FFD00739CCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E476B07281C2FFD00739CCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E476B09281C2FFD00739CCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				3E476B04281C2FFD00739CCB /* Assets.xcassets */,
 				3E476B06281C2FFD00739CCB /* LaunchScreen.storyboard */,
 				3E476B09281C2FFD00739CCB /* Info.plist */,
-				3E476B01281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodeld */,
 			);
 			path = LocalCameraMetal_Swift;
 			sourceTree = "<group>";
@@ -143,7 +140,6 @@
 			files = (
 				3E476AFD281C2FFB00739CCB /* ViewController.swift in Sources */,
 				3E476AF9281C2FFB00739CCB /* AppDelegate.swift in Sources */,
-				3E476B03281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodeld in Sources */,
 				3E476AFB281C2FFB00739CCB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,19 +358,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3E476B01281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3E476B02281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodel */,
-			);
-			currentVersion = 3E476B02281C2FFB00739CCB /* LocalCameraMetal_Swift.xcdatamodel */;
-			path = LocalCameraMetal_Swift.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3E476AED281C2FFB00739CCB /* Project object */;
 }
